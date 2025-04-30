@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pagamento</h1>
+    <form>
+        <label>Nome no cartão: <input type="text"></label><br>
+        <label>Número do cartão: <input type="text"></label><br>
+        <label>CVV: <input type="text"></label><br>
+        <button type="submit" onclick="confirmarPedido()">Confirmar</button>
+    </form>
+    <script>
+        function confirmarPedido() {
+            window.location.href = "success.html";
+        }
+    </script>
+</body>
+</html>

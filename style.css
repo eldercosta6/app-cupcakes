@@ -1,0 +1,19 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fff8f0;
+}
+header, footer {
+    background-color: #ff99cc;
+    padding: 10px;
+    text-align: center;
+}
+h1, h2 {
+    color: #663399;
+}
+.cupcake-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
