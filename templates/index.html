@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>App Cupcakes</title>
+</head>
+<body>
+    <h1>Bem-vindo ao App Cupcakes</h1>
+    <h2>Nossos Cupcakes</h2>
+    <ul>
+        {% for cupcake in cupcakes %}
+        <li>
+            <strong>{{ cupcake.nome }}</strong><br>
+            {{ cupcake.descricao }}<br>
+            R$ {{ cupcake.preco }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/carrinho">Ir para o Carrinho</a>
+</body>
+</html>
