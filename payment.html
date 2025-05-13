@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pagamento</h1>
-    <form>
-        <label>Nome no cartão: <input type="text"></label><br>
-        <label>Número do cartão: <input type="text"></label><br>
-        <label>CVV: <input type="text"></label><br>
-        <button type="submit" onclick="confirmarPedido()">Confirmar</button>
-    </form>
+    <header>
+        <h1>💳 Pagamento</h1>
+    </header>
+    <main>
+        <form onsubmit="confirmarPedido(event)">
+            <label>Nome no cartão: <input type="text" required></label>
+            <label>Número do cartão: <input type="text" required></label>
+            <label>CVV: <input type="text" required></label>
+            <button type="submit" class="botao">Confirmar Pagamento</button>
+        </form>
+    </main>
     <script>
-        function confirmarPedido() {
+        function confirmarPedido(e) {
+            e.preventDefault();
             window.location.href = "success.html";
         }
     </script>
