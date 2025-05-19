@@ -1,33 +1,156 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Carrinho de Compras</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>🛒 Carrinho de Compras</h1>
-    </header>
-    <main>
-        <div class="cupcake-list">
-            <div class="cupcake">
-                <h3>Cupcake de Chocolate</h3>
-                <p>Cobertura de brigadeiro</p>
-                <strong>R$ 10,00</strong>
-            </div>
-            <div class="cupcake">
-                <h3>Cupcake de Nutella</h3>
-                <p>Creme de avelã</p>
-                <strong>R$ 15,00</strong>
-            </div>
-        </div>
-        <div style="text-align:center; margin-top: 20px;">
-            <h3>Total: R$ 25,00</h3>
-            <a href="payment.html" class="botao">Ir para Pagamento</a>
-        </div>
-    </main>
-</body>
-</html>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #fff8f5;
+    color: #333;
+}
 
+header {
+    background-color: #ffb6c1;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
 
+main {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1, h2 {
+    margin: 0 0 20px;
+}
+
+.cupcake-container {
+    text-align: center;
+}
+
+.cupcake-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cupcake {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.cupcake:hover {
+    transform: translateY(-5px);
+}
+
+.cupcake h3 {
+    margin-top: 10px;
+    color: #d63384;
+}
+
+.cupcake img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.botao {
+    margin-top: 10px;
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #ff1493;
+}
+
+.botao-flutuante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .botao-flutuante {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+.botao-remover {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botao-remover:hover {
+    background-color: #c82333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #ffb6c1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: white;
+}

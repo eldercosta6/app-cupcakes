@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,20 +8,62 @@
 <body>
     <header>
         <h1>💳 Pagamento</h1>
+        <a href="cart.html" class="botao-flutuante">🛒 Carrinho</a>
     </header>
+
     <main>
         <form onsubmit="confirmarPedido(event)">
-            <label>Nome no cartão: <input type="text" required></label>
-            <label>Número do cartão: <input type="text" required></label>
-            <label>CVV: <input type="text" required></label>
+            <label>Forma de Pagamento:
+                <select id="formaPagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="pix">PIX</option>
+                    <option value="voucher">Voucher</option>
+                </select>
+            </label>
+
+            <fieldset id="dadosCartao">
+                <legend>Dados do Cartão</legend>
+                <label>Nome no cartão: <input type="text"></label>
+                <label>Número do cartão: <input type="text"></label>
+                <label>CVV: <input type="text"></label>
+            </fieldset>
+
+            <fieldset id="dadosPix" style="display:none;">
+                <legend>Pagamento via PIX</legend>
+                <p>Chave PIX: <strong>appcupcakes@pix.com.br</strong></p>
+            </fieldset>
+
+            <fieldset id="dadosVoucher" style="display:none;">
+                <legend>Voucher</legend>
+                <label>Código do Voucher: <input type="text"></label>
+            </fieldset>
+
             <button type="submit" class="botao">Confirmar Pagamento</button>
         </form>
     </main>
+
     <script>
         function confirmarPedido(e) {
             e.preventDefault();
+            localStorage.removeItem("carrinho");
             window.location.href = "success.html";
         }
+
+        const select = document.getElementById("formaPagamento");
+        const dadosCartao = document.getElementById("dadosCartao");
+        const dadosPix = document.getElementById("dadosPix");
+        const dadosVoucher = document.getElementById("dadosVoucher");
+
+        select.addEventListener("change", () => {
+            dadosCartao.style.display = "none";
+            dadosPix.style.display = "none";
+            dadosVoucher.style.display = "none";
+
+            if (select.value === "cartao") dadosCartao.style.display = "block";
+            if (select.value === "pix") dadosPix.style.display = "block";
+            if (select.value === "voucher") dadosVoucher.style.display = "block";
+        });
     </script>
 </body>
 </html>
